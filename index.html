@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0px;
+        padding: 0px;
+        background: rgb(31, 31, 31);
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+    }
+    .main{
+        width: 100px;
+        height: 100px;
+        border-radius: 100px;
+        background: yellow;
+        transform: scale(2.1);
+        display: none;        
+    }
+</style>
+<script>
+    var audio = new Audio('audio3.mpeg');
+    var main = document.getElementById('main');
+    document.addEventListener("click", myFunction);
+    var ring1 = new Audio('ring1.mpeg');
+    var ring2 = new Audio('ring2.mpeg');
+    var ring3 = new Audio('ring3.mpeg');
+    var ring4 = new Audio('ring4.mpeg');
+    var ring5 = new Audio('ring5.mpeg');
+    var ring6 = new Audio('ring6.mpeg');
+    var ring7 = new Audio('ring7.mpeg');
+    var ring8 = new Audio('ring8.mpeg');
+    var ring9 = new Audio('ring9.mpeg');
+    var ring10 = new Audio('ring10.mpeg');
+    var ring11= new Audio('ring11.mpeg');
+    var ring12 = new Audio('ring12.mpeg');
+    var ring13= new Audio('ring13.mpeg');
+    var ring14 = new Audio('ring14.mpeg');
+    var ring15 = new Audio('ring15.mpeg');
+    var ring16 = new Audio('ring16.mpeg');
+    var ring17 = new Audio('ring17.mpeg');
+    var ring18 = new Audio('ring18.mpeg');
+
+    var song = [audio,ring1,ring2,ring3,ring4,ring5,ring6,ring7,ring8,ring9,ring10,ring11,ring12,ring13,ring14,ring15,ring16,ring17,ring18];
+
+
+
+    var i = 0;
+    var wid = 0;
+    var hei = 0;
+    var left = 0;
+    var right = 0;
+    var color = "#7f8fa6";
+    var color1 = "#4cd137";
+    var color2 = "#00a8ff";
+    var color3 = "#e84118";
+    var color4 = "#CAD3C8";
+    var color5 = "#ffd32a";
+    var color6 = "#f7f1e3";
+    var color7 = "#cd84f1";
+    var color8 = "#6D214F";
+    var color9 = "#ff4757";
+    var color10 = "#ffa502";
+    var color11= "#3742fa";
+    var color12 = "#2c3e50";
+    var color13= "#9c88ff";
+    var color14 = "#ffffff";
+    var color15 = "#2f3542";
+    var color16= "#e15f41";
+    var color17 = "#f7d794";
+    var color18 = "#786fa6"
+   var array =[color,color1,color2,color3,color4,color5,color6,color7,color8,color9,color10,color11,color12,color13,color14,color15,color16,color17,color18];
+
+
+function myFunction() {
+ song[i].play();
+ wid += Math.floor((Math.random() * 10) + 10);
+ hei += Math.floor((Math.random() * 10) + 10);
+
+ left += Math.floor((Math.random() * 100) + 10);
+ right += Math.floor((Math.random() * 100) + 10);
+ document.getElementById('main').style.background = array[i];
+ document.getElementById('main').style.position = 'relative';
+ document.getElementById('main').style.width = wid + 'px';
+ document.getElementById('main').style.height = hei + 'px';
+ document.getElementById('main').style.left = left + 'px';
+ document.getElementById('main').style.transition='1s';
+ document.getElementById('main').style.top = right + 'px';
+ document.getElementById('main').style.display='block';
+ document.getElementById('main').boxShadow = 'rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;';
+
+if(wid > 160 && hei > 160){
+    wid = 20;
+    hei = 20;
+}
+else if(left > 800 ){
+    left = 0;
+}
+else if(right > 500){
+    right  = 0;
+}
+ 
+ console.log(song.length);
+
+
+ if(i < array.length - 1){
+    i++;
+ }
+ else if(array.length >= i ){
+    i = 0;
+ }
+ else if(i < song.length-1){
+    i++;
+ }
+ else{
+    i = 0;
+ }
+ 
+ 
+}
+</script>
+<body>
+    <div class="main" id="main">
+    </div>
+</body>
+</html>
